@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, createRef } from "react";
 import {
   CircularProgress,
   Grid,
@@ -8,11 +8,11 @@ import {
   FormControl,
   Select,
 } from "@material-ui/core";
+
 import PlaceDetails from "../PlaceDetails/PlaceDetails";
+import useStyles from "./styles.js";
 
-import useStyles from "./styles";
-
-const List = ({ places }) => {
+const List = ({ places = [] }) => {
   const classes = useStyles();
   const [type, setType] = useState("restaurants");
   const [rating, setRating] = useState("");
